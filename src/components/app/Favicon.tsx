@@ -8,7 +8,7 @@ export function Favicon() {
   const { data } = useQuery({
     queryKey: ["favicon"],
     queryFn: async () =>
-      (await supabase.from("settings").select("favicon_url").eq("id", 1).maybeSingle()).data?.favicon_url as string | null,
+      ((await supabase.rpc("get_favicon")).data as string | null),
     staleTime: 60_000,
   });
 

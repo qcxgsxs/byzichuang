@@ -264,6 +264,7 @@ export type Database = {
         Returns: Json
       }
       get_choices: { Args: { _question_id: string }; Returns: string[] }
+      get_favicon: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
